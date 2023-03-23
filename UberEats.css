@@ -1,0 +1,543 @@
+@import url('http://fonts.cdnfonts.com/css/uber-move-text');
+body{
+    margin: 0;
+    max-width: 100vw;
+    overflow-x:hidden ;
+    font-family: 'Uber Move Text', sans-serif;
+}
+
+
+
+#main{
+    background-color: #FFC043;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    margin: 0;
+    
+
+}
+
+.props1{
+    
+    position: absolute;
+    left: 0;
+    height: 100%;
+    
+}
+.props2{
+    position : absolute;
+    right: 0;
+    height:100%
+}
+.navbar{
+    position: fixed;
+    width: 100vw;
+    align-items: center;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    height: 96px;
+    justify-content: space-between;
+    left: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: -56.8px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 0px;
+    right: 0px;
+    text-size-adjust: 100%;
+    top: 0px;
+    z-index: 2;
+}
+.sliding{
+    background-color: transparent;
+    width: 70vw;
+    height: 90px;
+    position: absolute;
+    z-index: -1;
+    left: 350px;
+    transition: 0.3s;
+
+}
+.navsearch{
+    position: absolute;
+    margin: 0 auto;
+    left: -15vw; 
+    right: 0; 
+    width: 35vw;
+    margin-left: auto; 
+    margin-right: auto;
+    /* display: inline-block; */
+    visibility: hidden;
+    transition: 0s;
+    transition-delay:0s ;
+    transition-duration: 0s;
+    /* transform: translateY(-50px); */
+    opacity: 1;
+    z-index: -2;
+    
+}
+.scrollednav{
+    /* display: inline-block; */
+    transform: translateX(60vw);
+    transition: 0.5s;
+}
+.scrollednavinput{
+    visibility: visible;
+}
+.navinput{
+    box-sizing: border-box;
+    color: 6B6B83;
+    background-color: #EEEEEE;
+    padding-left: 4em;
+    height: 3.1em;
+    width: 48vW;
+    border: none;
+    font-weight: 540;
+    font-size: 17px;
+    transition: 0.3s ease-out;
+    border-color: white;
+}
+.navsearch::before{
+    position: absolute;
+    content: '';
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3C!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    left: 0;
+    right: 30vw;
+    top: 12px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+
+#hamburger{
+    font-size: 21px;
+    transform: translateY(-0.1em);
+    
+}
+#hamburger:hover{
+    cursor: pointer;
+}
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    /* z-index: 4; */
+    margin: 0;
+    padding: 0;
+    transform: translateX(-100vw);
+    display: flex;
+    z-index: 10;
+    /* opacity: 1; */
+}
+.darkpage{
+    height: 100vh;
+    margin-left:0 ;
+    width: 100vw;
+    position:absolute;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    z-index:0;
+}
+.hamburgermenu{
+    height: 100vh;
+    margin-right: 0;
+    width: 19.5vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 0;
+    top: 0;
+    transition: 0.5s ease-in;
+    opacity: 0;
+    
+    z-index: 1;
+    
+   
+    
+}
+.hamburgertop{
+display: flex;
+flex-direction: column;
+flex-grow: 0.4;
+justify-content: flex-start;
+}
+.hamburgertop div button{
+    background-color: black;
+    border: none;
+    outline: none;
+    color: white;
+    height: 7.4vh;
+    width: 15.2vw;
+    margin-left: 2.1vw;
+    margin-top: 4vh;
+    font-size: 20px;
+    font-weight: 550;
+    margin-bottom: 20px;
+}
+.hamburgertop div button:hover{
+    cursor: pointer;
+    background-color: rgb(49, 49, 49);
+}
+.hamburgertop div ul{
+list-style: none;
+display: flex;
+flex-direction: column;
+text-decoration: none;
+}
+
+.hamburgertop div ul li{
+list-style: none;
+margin-left: -10px;
+margin-bottom: 12px;
+}
+.hamburgertop div ul li a {
+text-decoration: none;
+font-size: 14px;
+color: black;
+}
+.hamburgerbottom{
+display: flex;
+margin-left: 2vw;
+margin-right: 2vw;
+margin-bottom: 6vh;
+flex-direction:column ;
+}
+.hamburgerbottom img{
+    width: 4vw;
+    float: left;
+    margin-right: 10px;
+
+}
+.hamburgerbottomtext{
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    margin-bottom: 18px;
+
+}
+.hamburgerbottombuttons{
+    outline: none;
+    border: none;
+    font-size: 15px;
+    padding: 0.8em 1.2em;
+    border-radius:2em;
+    margin-bottom: 10px;
+    z-index: 3;
+}
+.hamburgerbottombuttons:hover{
+    cursor: pointer;
+    background-color: rgb(222, 222, 222);
+
+}
+.hamburgerbottombuttonsholder{
+padding: 0;
+}
+.active1{
+    transform: translateX(100vw);
+    opacity: 1;
+    transition: 0.5s cubic-bezier(0,1.23,0,.50);
+}
+.active2{
+    transform: translateX(100vw);
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+
+
+.logo{
+    margin-left: 2em;
+}
+.signup{
+    all: unset;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+font-weight: 500!important;
+height: 48px;
+justify-content: center;
+line-height: 20px;
+min-height :48px;
+padding: 2px 1px;
+align-items: center;
+border-radius: 500px;
+box-shadow: rgba(0,0,0,0.1) 0px 0px 8px;
+cursor: pointer;
+display: flex;
+width: 88px;
+white-space: nowrap;
+text-size-adjust: 100%;
+}
+.signup:hover{
+    cursor: pointer;
+    background-color: rgb(209, 209, 209);
+}
+.mid-content{
+    position: absolute;
+    top: 13.2em;
+    left: 2.5em;
+    z-index: 1;
+}
+.heading{
+    font-size: 3.2em;
+}
+.toggler{
+    background-color: rgb(235,177,62);
+    width: 170px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+}
+.switch{
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 450;
+    padding-top: 6.8%;
+    position: relative;
+    z-index: 2;
+   
+}
+.switch:hover{
+    cursor: pointer;
+}
+.indicator{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1);
+    width: 80px;
+    
+    height: 30px;
+    border-radius: 15px;
+    top: 5px;
+    left: 5px;
+    transition: 0.35s ease-in-out;
+    
+    
+}
+.moveindicator{
+    left: 94px;
+    width: 70px;}
+
+#locationinput{
+    box-sizing: border-box;
+    padding-left: 4em;
+    height: 3.1em;
+    width: 32VW;
+    border: none;
+    font-weight: 540;
+    font-size: 17px;
+    transition: 0.3s ease-out;
+    border-color: white;
+
+}
+#locationinput:focus, .navinput:focus{
+    border: none;
+    border-bottom: 3px inset black;
+    box-shadow: none;
+    outline: none;
+    transition: 0.3s ease-out;
+}
+.locationcontainer::before{
+    position: absolute;
+    content: '';
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3C!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    left: 4em;
+    z-index: 2;
+}
+/* #locationlogo{
+    position: absolute;
+    font-size: 1.2em;
+    left: 60px;
+    
+} */
+.locationbutton{
+    /* height: 4.3em;
+    width: 8em; */
+    margin-left: 0.4em;
+    font-size: 1.1em;
+    padding:0.9em 0.64em ;
+    background-color: black;
+    font-weight:500 ;
+    color: white;
+    border: none;
+}
+.locationbutton:hover{
+    cursor: pointer;
+    background-color: rgb(47, 47, 47);
+}
+.locationcontainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2em;
+    margin-left: -35px;
+}
+
+
+
+
+
+
+.banner {
+    display: flex;
+    margin-top: 10vh;
+    justify-content: space-evenly;
+    font-weight: 500;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+.bannercards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+.bannercards img{
+    width: 30vw;
+}
+.bannerheadings{
+    margin-bottom: 0.5vh;
+}
+
+.bannercards:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* <-------------- responsive media queries -----------------> */
+@media (max-width: 900px) {
+    .navbar{
+        position:fixed;
+    
+    }
+    .props1{
+        /* object-fit: fill; */
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+    .navsearch{
+        display: none !important;
+    }
+    .sliding{
+        display: none !important;
+    }
+    .hamburgermenu{
+        width: 50vw;
+    }
+    .hamburgerbottombuttons{
+        margin-left: 5vw;
+        width: 30vw;
+    }
+    .hamburgerbottom img{
+        width: 15vw;
+    }
+    .hamburgertop div button{
+        width: 40vw;
+        margin-left: 5vw;
+    }
+    .signup{
+        width: 70px;
+        font-size: 16px;
+        transform: translateX(10px);
+    }
+    h1{
+        width: 80vw;
+        margin-top: 0;
+        text-align: center;
+    }
+    .heading{
+        font-size: 2.4em;
+    }
+    .mid-content{
+        
+        margin-top: 30vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 40px;
+        left: 0;
+        right: 0;
+       
+
+    }
+    .toggler{
+        margin: auto;
+    }
+    .locationcontainer{
+        margin: auto;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        
+    }
+    #locationinput{
+        width: 55vw;
+        margin-bottom: 22px;
+        padding-left:8vw;
+    }
+    #locationlogo{
+        top: 5.5vh;
+        left: 9.5vw;
+    }
+    .locationcontainer::before{
+        top: 3em;
+        left: 2.8em;
+    }
+   
+
+}
+@media(max-width:1200px){
+    .banner{
+        flex-direction: column;
+        text-align: center;
+    }
+    .bannercards{
+        margin-bottom: 10vh;
+    }
+
+    .banner div img{
+        width: 80vw;
+
+    }
+    .navsearch{
+        left:0
+    }
+}
+@media(max-width:1200px){
+    .props1{
+        object-fit: fill;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        object-position: bottom;
+    }
+    .props2{
+        display: none;
+    }
+}
